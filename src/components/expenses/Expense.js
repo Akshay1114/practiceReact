@@ -35,9 +35,9 @@ function Expense(props) {
         />
       )}})} */}
 {/* 2nd method */}
-{filteredExpense.length===0? <p>No Expenses Found</p>:
-  (
-    filteredExpense.map((expense)=>(
+{filteredExpense.length===0 &&<p>No Expenses Found</p>}
+{filteredExpense.length > 0 &&    
+filteredExpense.map((expense)=>(
       <ExpensItem
       id = {expense.id}
       title={expense.title}
@@ -45,7 +45,7 @@ function Expense(props) {
       date={expense.date}
       />
     ))
-  )
+
 }
 
       {/* <ExpensItem
