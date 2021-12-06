@@ -5,6 +5,7 @@ const ExpenseForm = (props) => {
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
+  const [showForm, setShowForm] = useState(false);
 
   // const [userInput, setUserInput] = useState({
   //     enteredTitle : '',
@@ -53,8 +54,14 @@ props.onSaveExpense(expenseData)
     setEnteredAmount('')
     setEnteredDate('')
   };
+
+  const handleNewExpense = () =>{
+    console.log("butoon working")
+  }
   return (
-    <form onSubmit={handleSubmit}>
+    <div>
+   { 
+   <form onSubmit={handleSubmit}>
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>title</label>
@@ -82,10 +89,13 @@ props.onSaveExpense(expenseData)
         </div>
       </div>
       <div className="new-expense__actions">
+        <button type="submit" onClick={props.onCancel}>Cancel</button>
         <button type="submit">Add Expense</button>
       </div>
     </form>
-  );
+    }
+  
+    </div>  );
 };
 
 export default ExpenseForm;
