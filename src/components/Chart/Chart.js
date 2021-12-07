@@ -1,8 +1,10 @@
 import React from "react";
-import "./Chart.css";
+import './Chart.css'
 import ChartBar from "./ChartBar";
 
 const Chart = (props) => {
+
+  console.log(props.dataPoints)
 const dataPonitValues = props.dataPoints.map(dataPoint => dataPoint.value)
     const totalMaximum = Math.max(...dataPonitValues)
   return (

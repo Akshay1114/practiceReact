@@ -5,7 +5,7 @@ import Card from "../Ui/Card";
 import ExpensesFilter from "./ExpenseFilter";
 import moment from "moment";
 import ExpensesList from "./ExpensesList";
-import ChartBar from "../Chart/ChartBar";
+import ExpensesChart from "./ExpensesChart";
 
 function Expense(props) {
   const [filteredYear, setFilteredYear] = useState("2020");
@@ -40,7 +40,7 @@ function Expense(props) {
         selected={filteredYear}
         onChangeFilter={filterChangeHandler}
       />
-      <ChartBar expenses = {filteredExpense} />
+      <ExpensesChart expenses = {filteredExpense} />
       <ExpensesList items = {filteredExpense}/>
       {/* {expensesContent} */}
 
